@@ -4,145 +4,224 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rahul Kumar | Data Analyst</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f9fbfc;
+    :root {
+      --primary: #0a3d62;
+      --accent: #00a8ff;
+      --gradient-start: #74ebd5;
+      --gradient-end: #ACB6E5;
+      --bg: #f9fbfc;
+    }
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body, html {
       margin: 0;
       padding: 0;
-      scroll-behavior: smooth;
-      color: #2b2b2b;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+    }
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .spinner {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid var(--primary);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
     }
     nav {
       position: sticky;
       top: 0;
-      background: white;
+      background: #fff;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 25px;
-      padding: 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      z-index: 999;
+      gap: 20px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+      z-index: 1000;
     }
     nav a {
       text-decoration: none;
-      color: #0a3d62;
+      color: var(--primary);
       font-weight: 600;
-      transition: color 0.3s;
+      transition: color .3s;
     }
     nav a:hover {
-      color: #00a8ff;
+      color: var(--accent);
     }
     .header {
-      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-      color: #0a3d62;
-      padding: 80px 20px;
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      color: var(--primary);
       text-align: center;
-      animation: fadeIn 2s ease-in;
+      padding: 100px 20px;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .header h1 {
+      font-size: 3rem;
+      margin-bottom: .5rem;
+      font-weight: 700;
+    }
+    .header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin-inline: auto;
+      font-weight: 500;
     }
     .social-links a {
       margin: 0 10px;
-      color: #0a3d62;
-      font-size: 20px;
-      transition: transform 0.3s;
+      color: var(--primary);
+      font-size: 1.6rem;
+      transition: transform .3s, color .3s;
     }
     .social-links a:hover {
       transform: scale(1.2);
-      color: #00a8ff;
+      color: var(--accent);
     }
     section {
-      padding: 50px 20px;
-      max-width: 1000px;
+      padding: 60px 20px;
+      max-width: 1100px;
       margin: auto;
     }
     h2 {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      color: #072b4e;
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+    h3 {
       color: #0a3d62;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
     .card {
-      background: #ffffff;
+      background: #fff;
       padding: 25px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       margin-bottom: 30px;
-      transition: transform 0.3s;
+      transition: transform .3s, box-shadow .3s;
+      animation: fadeUp 0.6s ease-in-out both;
+      border: 2px solid var(--primary);
     }
     .card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 6px 14px;
+      margin: 6px 6px 6px 0;
+      border-radius: 30px;
+      font-size: .85rem;
+    }
+    .btn {
+      background: var(--primary);
+      color: #fff;
+      padding: .8rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background .3s;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background: var(--accent);
     }
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
+      gap: 30px;
     }
     .project img {
       width: 100%;
       border-radius: 10px;
       margin-top: 15px;
     }
-    .badge {
-      display: inline-block;
-      background: #0a3d62;
-      color: white;
-      padding: 5px 12px;
-      margin: 5px 5px 5px 0;
-      border-radius: 20px;
-      font-size: 0.9em;
-    }
-    .btn {
-      background: #0a3d62;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 15px;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background: #00a8ff;
-    }
     footer {
       text-align: center;
       background: #e3f2fd;
       color: #333;
-      padding: 20px 10px;
+      padding: 30px 15px;
+    }
+    footer a {
+      color: var(--primary);
+      text-decoration: underline;
     }
     .back-to-top {
       position: fixed;
       bottom: 30px;
       right: 30px;
-      background: #0a3d62;
-      color: white;
+      background: var(--primary);
+      color: #fff;
       padding: 12px 15px;
       border-radius: 50%;
       font-size: 18px;
       cursor: pointer;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: background 0.3s;
+      transition: background .3s;
     }
     .back-to-top:hover {
-      background: #00a8ff;
+      background: var(--accent);
+    }
+    @media (max-width: 768px) {
+      nav {
+        gap: 10px;
+        font-size: 0.95rem;
+        padding: 0.8rem;
+      }
+      .header h1 {
+        font-size: 2.2rem;
+      }
+      .header p {
+        font-size: 1rem;
+      }
+      .btn {
+        font-size: .9rem;
+        padding: .7rem 1.2rem;
+      }
+      section {
+        padding: 40px 15px;
+      }
     }
   </style>
 </head>
 <body>
-
+  <div id="loader"><div class="spinner"></div></div>
   <nav>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
+    <a href="#education-resume">Education</a>
     <a href="#resume">Resume</a>
   </nav>
-
   <header class="header">
     <h1>Rahul Kumar</h1>
     <p id="typing-text">Data Analyst | Excel • SQL • Power BI • Tableau • Python</p>
@@ -152,15 +231,12 @@
       <a href="mailto:rahulrkkr2001@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
   </header>
-
-  <section id="about" class="about card">
+  <section id="about" class="card">
     <h2>About Me</h2>
-    <p>Motivated and detail-oriented Data Analyst with 1 year of experience in extracting actionable insights from complex datasets. Skilled in data visualization, Excel, Power BI, Tableau, SQL, and Python.</p>
+    <p>Motivated and detail‑oriented Data Analyst with 1 year of experience extracting actionable insights. Proficient in Excel, Power BI, Tableau, SQL, and Python.</p>
     <div>
-      <span class="badge">Excel</span>
-      <span class="badge">SQL</span>
-      <span class="badge">Power BI</span>
-      <span class="badge">Tableau</span>
+      <span class="badge">Excel</span><span class="badge">SQL</span>
+      <span class="badge">Power BI</span><span class="badge">Tableau</span>
       <span class="badge">Python</span>
     </div>
   </section>
@@ -169,37 +245,29 @@
     <h2>Projects</h2>
     <div class="projects-grid">
       <div class="project card">
-        <h3>Sales Performance Report (Excel)</h3>
-        <p>Created a detailed sales report for Shyama Store using Excel with pivot tables, slicers, and charts for actionable insights.</p>
+        <h3>Sales Performance (Excel)</h3>
         <ul>
-          <li>Used Pivot Tables for performance breakdown</li>
-          <li>Visualized key KPIs with dynamic charts</li>
-          <li>Included filters for categories and date ranges</li>
+          <li>Pivot Tables, KPIs & dynamic charts</li>
+          <li>Category & date filters for interactivity</li>
         </ul>
         <a class="btn" href="Shyama%20Store%20Analysis%20(1).xlsx" download><i class="fas fa-file-excel"></i> Download Excel</a>
       </div>
-
       <div class="project card">
-        <h3>End-to-End Power BI Dashboard</h3>
-        <p>Designed a Power BI dashboard covering complete business analytics pipeline including data cleaning, modeling, and visualization.</p>
+        <h3>Power BI Dashboard</h3>
         <ul>
-          <li>Integrated multiple data sources</li>
-          <li>Applied DAX for dynamic measures</li>
-          <li>Presented sales, region, and customer insights</li>
+          <li>Data cleaning & modeling from multiple sources</li>
+          <li>DAX measures & slicers for interactivity</li>
         </ul>
         <a class="btn" href="END%20to%20END%20(1).pbix" download><i class="fas fa-chart-bar"></i> Download PBIX</a>
       </div>
-
       <div class="project card">
-        <h3>E-Commerce Analytics (Tableau)</h3>
-        <p>Analyzed online shopping data to extract insights using EDA, CLV, and Tableau dashboards.</p>
+        <h3>E‑Commerce Analytics (Tableau)</h3>
         <ul>
-          <li>Exploratory Data Analysis (EDA)</li>
-          <li>Customer Lifetime Value (CLV)</li>
-          <li>Interactive dashboards in Tableau</li>
+          <li>EDA & CLV calculation</li>
+          <li>Interactive dashboards</li>
         </ul>
-        <img src="https://github.com/Rahulrkkr/Portfolio/blob/main/Screenshot%20(1).png" alt="Project Screenshot">
-        <a class="btn" href="https://public.tableau.com/app/profile/rahul.kumar2075/viz/Staycatin_16848324601250/Dashboard1" target="_blank">
+        <img src="https://github.com/Rahulrkkr/Portfolio/blob/main/Screenshot%20(1).png" alt="Tableau Dashboard">
+        <a class="btn" href="https://public.tableau.com/app/profile/rahul.kumar2075" target="_blank">
           <i class="fas fa-chart-pie"></i> View Dashboard
         </a>
       </div>
@@ -209,90 +277,59 @@
   <section id="experience">
     <h2>Experience</h2>
     <div class="card">
-      <h3>Data Research Analyst – Afaqs! (Sept 2024 – Present)</h3>
+      <h3>Data Research Analyst – Afaqs! (Sept 2024–Present)</h3>
       <ul>
-        <li>Scraped data from LinkedIn using Apollo, Lusha</li>
-        <li>Optimized CRM (Salesforce), improving lead quality by 20%</li>
-        <li>Created dashboards, improved campaign performance by 15%</li>
+        <li>Scraped LinkedIn data for lead generation</li>
+        <li>Optimized Salesforce CRM → 20% lead quality ↑</li>
       </ul>
     </div>
     <div class="card">
-      <h3>Data Research Analyst – Pulp Strategy (Apr 2024 – Sept 2024)</h3>
+      <h3>Data Research Analyst – Pulp Strategy (Apr–Sept 2024)</h3>
       <ul>
-        <li>Cleaned and prepared data</li>
-        <li>Managed CRM (ZOHO), automated lead generation</li>
-        <li>Built dashboards in Excel</li>
+        <li>Cleaned and modeled data; while automating CRM workflows using ZOHO</li>
       </ul>
     </div>
     <div class="card">
-      <h3>Email Marketing Specialist – Delvens (Oct 2023 – Mar 2024)</h3>
+      <h3>Email Marketing Specialist – Delvens (Oct 2023–Mar 2024)</h3>
       <ul>
-        <li>Scraped, mapped, and analyzed targeting data</li>
-        <li>Handled email campaign deployment and tracking</li>
+        <li>Scraped and analyzed targeting data; led email campaign execution</li>
       </ul>
     </div>
   </section>
 
-  <section id="education-resume" class="card" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
-  <div style="flex: 1 1 45%; min-width: 280px;">
-    <h2>Education</h2>
-    <div class="card">
-      <p><i class="fas fa-graduation-cap"></i> <strong>Bachelor of Commerce (B.Com)</strong><br>
-      Binod Bihari Kolyanchal University – 7.24 CGPA (2019 – 2022)</p>
-      <p><i class="fas fa-certificate"></i> <strong>Certifications:</strong><br>
-      Full Stack Data Analytics – Coding Ninjas</p>
+  <section id="education-resume" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:space-between;">
+    <div style="flex:1 1 45%; min-width:280px;" class="card">
+      <h2>Education</h2>
+      <p><i class="fas fa-graduation-cap"></i> <strong>B.Com</strong>, Binod Bihari Kolyanchal University (7.24 CGPA)</p>
+      <p><i class="fas fa-certificate"></i> Full Stack Data Analytics – Coding Ninjas</p>
     </div>
-  </div>
-
-<!-- Resume Section (Updated) -->
-<div style="flex: 1 1 45%; min-width: 280px;">
-  <h2>Resume</h2>
-  <div class="card" style="text-align: center;">
-    <i class="fas fa-file-pdf" style="font-size: 50px; color: #0a3d62; margin-bottom: 15px;"></i>
-    <p style="margin-bottom: 10px; font-weight: 500;">Click below to download my resume</p>
-    
-    <!-- Download Button -->
-    <a class="btn" href="Rahul_Data_Resume.pdf" download>
-      <i class="fas fa-download"></i> Download Resume
-    </a>
-
-    <!-- Optional Enhancements -->
-    <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
-      PDF File • Approx. 1.2 MB
-    </p>
-    <p style="font-size: 0.9em;">
-      <a href="Rahul_Data_Resume.pdf" target="_blank" style="color: #0a3d62; text-decoration: underline;">
-      </a>
-    </p>
-  </div>
-</div>
-</div>
-
-</section>
-  
-  
-</section>
+    <div id="resume" style="flex:1 1 45%; min-width:280px; text-align:center;" class="card">
+      <h2>Resume</h2>
+      <i class="fas fa-file-pdf" style="font-size:50px; color: var(--primary); margin-bottom:10px;"></i>
+      <a class="btn" href="Rahul_Data_Resume.pdf" download><i class="fas fa-download"></i> Download Resume</a>
+      <p style="font-size:.9em; color:#555; margin-top:10px;">PDF • Approx. 1.2 MB</p>
+    </div>
+  </section>
 
   <footer>
-    <p>© 2025 Rahul Kumar. All rights reserved. | <a href="#">Back to top</a></p>
+    <p>© 2025 Rahul Kumar | <a href="#">Back to top</a></p>
   </footer>
 
-  <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+  <div class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑</div>
 
   <script>
+    window.addEventListener('load', () => document.getElementById('loader').style.display = 'none');
     const text = "Data Analyst | Excel • SQL • Power BI • Tableau • Python";
     let i = 0;
     const speed = 60;
-    const element = document.getElementById("typing-text");
-    element.innerHTML = "";
-    function typeWriter() {
+    const elem = document.getElementById("typing-text");
+    elem.innerHTML = "";
+    (function type(){
       if (i < text.length) {
-        element.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
+        elem.innerHTML += text.charAt(i++);
+        setTimeout(type, speed);
       }
-    }
-    typeWriter();
+    })();
   </script>
 </body>
 </html>
