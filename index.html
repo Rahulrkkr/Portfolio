@@ -1,1 +1,252 @@
-<!DOCTYPE html><html><head><title>Rahul Portfolio</title></head><body><h1>Portfolio Loaded</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rahul Kumar | Data Analyst</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fdfdfd;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      color: #333;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      z-index: 999;
+    }
+    nav a {
+      text-decoration: none;
+      color: #1e3c72;
+      font-weight: 600;
+    }
+    .header {
+      background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+      color: #1e3c72;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .social-links a {
+      margin: 0 10px;
+      color: #1e3c72;
+      font-size: 20px;
+    }
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #1e3c72;
+    }
+    .card {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    .project img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+    .badge {
+      display: inline-block;
+      background: #1e3c72;
+      color: white;
+      padding: 5px 12px;
+      margin: 5px 5px 5px 0;
+      border-radius: 20px;
+      font-size: 0.9em;
+    }
+    .btn {
+      background: #1e3c72;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    footer {
+      text-align: center;
+      background: #f1f1f1;
+      color: #333;
+      padding: 20px 10px;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #1e3c72;
+      color: white;
+      padding: 12px 15px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#resume">Resume</a>
+  </nav>
+
+  <header class="header">
+    <h1>Rahul Kumar</h1>
+    <p id="typing-text">Data Analyst | Excel • SQL • Power BI • Tableau • Python</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/rahul-kumar-6b8772234/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/Rahulrkkr" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="mailto:rahulrkkr2001@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </header>
+
+  <section id="about" class="about card">
+    <h2>About Me</h2>
+    <p>Motivated and detail-oriented Data Analyst with 1 year of experience in extracting actionable insights from complex datasets. Skilled in data visualization, Excel, Power BI, Tableau, SQL, and Python.</p>
+    <div>
+      <span class="badge">Excel</span>
+      <span class="badge">SQL</span>
+      <span class="badge">Power BI</span>
+      <span class="badge">Tableau</span>
+      <span class="badge">Python</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project card">
+        <h3>Sales Performance Report (Excel)</h3>
+        <p>Created a detailed sales report for Shyama Store using Excel with pivot tables, slicers, and charts for actionable insights.</p>
+        <ul>
+          <li>Used Pivot Tables for performance breakdown</li>
+          <li>Visualized key KPIs with dynamic charts</li>
+          <li>Included filters for categories and date ranges</li>
+        </ul>
+        <a class="btn" href="Shyama%20Store%20Analysis%20(1).xlsx" download><i class="fas fa-file-excel"></i> Download Excel</a>
+      </div>
+
+      <div class="project card">
+        <h3>End-to-End Power BI Dashboard</h3>
+        <p>Designed a Power BI dashboard covering complete business analytics pipeline including data cleaning, modeling, and visualization.</p>
+        <ul>
+          <li>Integrated multiple data sources</li>
+          <li>Applied DAX for dynamic measures</li>
+          <li>Presented sales, region, and customer insights</li>
+        </ul>
+        <a class="btn" href="END%20to%20END%20(1).pbix" download><i class="fas fa-chart-bar"></i> Download PBIX</a>
+      </div>
+
+      <div class="project card">
+        <h3>Mega Mart Sales Dashboard (Power BI)</h3>
+        <p>Built a Power BI report for Mega Mart showcasing category-wise and region-wise sales trends with custom visuals.</p>
+        <ul>
+          <li>Used Power Query for transformation</li>
+          <li>Deployed dynamic visualizations and KPIs</li>
+          <li>Interactive slicers for deep filtering</li>
+        </ul>
+        <a class="btn" href="Mega%20Mart%20Report.pbix" download><i class="fas fa-chart-line"></i> Download PBIX</a>
+      </div>
+
+      <div class="project card">
+        <h3>E-Commerce Analytics (Power BI)</h3>
+        <p>Analyzed online shopping data to extract insights using EDA, CLV, and Power BI dashboards.</p>
+        <ul>
+          <li>Exploratory Data Analysis (EDA)</li>
+          <li>Customer Lifetime Value (CLV)</li>
+          <li>Interactive dashboards</li>
+        </ul>
+        <img src="https://via.placeholder.com/600x300?text=Project+Screenshot" alt="Project Screenshot">
+        <p><a href="https://public.tableau.com/app/profile/rahul.kumar2075" target="_blank">View Dashboard</a></p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="card">
+      <h3>Data Research Analyst – Afaqs! (Sept 2024 – Present)</h3>
+      <ul>
+        <li>Scraped data from LinkedIn using Apollo, Lusha</li>
+        <li>Optimized CRM (Salesforce), improving lead quality by 20%</li>
+        <li>Created dashboards, improved campaign performance by 15%</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Data Research Analyst – Pulp Strategy (Apr 2024 – Sept 2024)</h3>
+      <ul>
+        <li>Cleaned and prepared data</li>
+        <li>Managed CRM (ZOHO), automated lead generation</li>
+        <li>Built dashboards in Excel</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Email Marketing Specialist – Delvens (Oct 2023 – Mar 2024)</h3>
+      <ul>
+        <li>Scraped, mapped, and analyzed targeting data</li>
+        <li>Handled email campaign deployment and tracking</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education" class="card">
+    <h2>Education</h2>
+    <p><strong>Bachelor of Commerce (B.Com)</strong><br>Binod Bihari Kolyanchal University – 7.24 CGPA (2019 – 2022)</p>
+    <p><strong>Certifications:</strong> Full Stack Data Analytics – Coding Ninjas</p>
+  </section>
+
+  <section id="resume" class="card">
+    <h2>Resume</h2>
+    <a class="btn" href="Rahul_Data_Resume.pdf" download><i class="fas fa-download"></i> Download Resume</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Rahul Kumar. All rights reserved. | <a href="#">Back to top</a></p>
+  </footer>
+
+  <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+
+  <script>
+    const text = "Data Analyst | Excel • SQL • Power BI • Tableau • Python";
+    let i = 0;
+    const speed = 60;
+    const element = document.getElementById("typing-text");
+    element.innerHTML = "";
+    function typeWriter() {
+      if (i < text.length) {
+        element.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    typeWriter();
+  </script>
+</body>
+</html>
