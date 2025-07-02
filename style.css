@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+h1, h2, h3 {
+  color: #222;
+}
+.header, footer {
+  text-align: center;
+}
+.social-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #0077b5;
+}
+.btn {
+  background: #0077b5;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+}
