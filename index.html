@@ -134,6 +134,67 @@
   </style>
 </head>
 <body>
-<!-- Page content stays unchanged -->
+<header class="header">
+  <h1>Rahul Kumar</h1>
+  <p id="typing-text">Data Analyst | Excel • SQL • Power BI • Tableau • Python</p>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/rahul-kumar-6b8772234/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/Rahulrkkr" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="mailto:rahulrkkr2001@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+</header>
+
+<section id="about" class="card">
+  <h2>About Me</h2>
+  <p>Motivated and detail-oriented Data Analyst with experience in Excel, SQL, Power BI, Tableau, and Python.</p>
+  <div>
+    <span class="badge">Excel</span>
+    <span class="badge">SQL</span>
+    <span class="badge">Power BI</span>
+    <span class="badge">Tableau</span>
+    <span class="badge">Python</span>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    <div class="project card">
+      <h3>E-Commerce Analytics (Tableau)</h3>
+      <p>Analyzed shopping data with Tableau dashboards featuring EDA and CLV insights.</p>
+      <ul>
+        <li>Exploratory Data Analysis (EDA)</li>
+        <li>Customer Lifetime Value (CLV)</li>
+        <li>Interactive dashboards</li>
+      </ul>
+      <img src="https://github.com/Rahulrkkr/Portfolio/blob/main/Screenshot%20(1).png" alt="Project Screenshot">
+      <a class="btn" href="https://public.tableau.com/app/profile/rahul.kumar2075/viz/Staycatin_16848324601250/Dashboard1" target="_blank">
+        <i class="fas fa-chart-pie"></i> View Dashboard
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Rahul Kumar. All rights reserved. | <a href="#">Back to top</a></p>
+</footer>
+
+<div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</div>
+
+<script>
+  const text = "Data Analyst | Excel • SQL • Power BI • Tableau • Python";
+  let i = 0;
+  const speed = 60;
+  const element = document.getElementById("typing-text");
+  element.innerHTML = "";
+  function typeWriter() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+  typeWriter();
+</script>
 </body>
 </html>
