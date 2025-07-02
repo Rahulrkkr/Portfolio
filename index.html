@@ -35,13 +35,12 @@
     nav a:hover {
       color: #00a8ff;
     }
-   .header {
+    .header {
       background: linear-gradient(135deg, #74ebd5, #ACB6E5);
       color: #0a3d62;
       padding: 80px 20px;
       text-align: center;
       animation: fadeIn 2s ease-in;
-
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-20px); }
@@ -191,7 +190,6 @@
         <a class="btn" href="END%20to%20END%20(1).pbix" download><i class="fas fa-chart-bar"></i> Download PBIX</a>
       </div>
 
-
       <div class="project card">
         <h3>E-Commerce Analytics (Tableau)</h3>
         <p>Analyzed online shopping data to extract insights using EDA, CLV, and Tableau dashboards.</p>
@@ -235,16 +233,45 @@
     </div>
   </section>
 
-  <section id="education" class="card">
+  <section id="education-resume" class="card" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+  <div style="flex: 1 1 45%; min-width: 280px;">
     <h2>Education</h2>
-    <p><strong>Bachelor of Commerce (B.Com)</strong><br>Binod Bihari Kolyanchal University – 7.24 CGPA (2019 – 2022)</p>
-    <p><strong>Certifications:</strong> Full Stack Data Analytics – Coding Ninjas</p>
-  </section>
+    <div class="card">
+      <p><i class="fas fa-graduation-cap"></i> <strong>Bachelor of Commerce (B.Com)</strong><br>
+      Binod Bihari Kolyanchal University – 7.24 CGPA (2019 – 2022)</p>
+      <p><i class="fas fa-certificate"></i> <strong>Certifications:</strong><br>
+      Full Stack Data Analytics – Coding Ninjas</p>
+    </div>
+  </div>
 
-  <section id="resume" class="card">
-    <h2>Resume</h2>
-    <a class="btn" href="Rahul_Data_Resume.pdf" download><i class="fas fa-download"></i> Download Resume</a>
-  </section>
+<!-- Resume Section (Updated) -->
+<div style="flex: 1 1 45%; min-width: 280px;">
+  <h2>Resume</h2>
+  <div class="card" style="text-align: center;">
+    <i class="fas fa-file-pdf" style="font-size: 50px; color: #0a3d62; margin-bottom: 15px;"></i>
+    <p style="margin-bottom: 10px; font-weight: 500;">Click below to download my resume</p>
+    
+    <!-- Download Button -->
+    <a class="btn" href="Rahul_Data_Resume.pdf" download>
+      <i class="fas fa-download"></i> Download Resume
+    </a>
+
+    <!-- Optional Enhancements -->
+    <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+      PDF File • Approx. 1.2 MB
+    </p>
+    <p style="font-size: 0.9em;">
+      <a href="Rahul_Data_Resume.pdf" target="_blank" style="color: #0a3d62; text-decoration: underline;">
+      </a>
+    </p>
+  </div>
+</div>
+</div>
+
+</section>
+  
+  
+</section>
 
   <footer>
     <p>© 2025 Rahul Kumar. All rights reserved. | <a href="#">Back to top</a></p>
